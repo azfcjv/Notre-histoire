@@ -1,0 +1,413 @@
+*{
+    box-sizing:border-box;
+    font-family:'Poppins',Arial,sans-serif;
+}
+
+
+body{
+
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    background:
+    linear-gradient(135deg,#170022,#ff3d88,#6a0045);
+
+}
+
+
+
+/* Fond lumineux animé */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#ff8ac0;
+
+    filter:blur(150px);
+
+    animation:move 8s infinite alternate;
+
+}
+
+
+
+@keyframes move{
+
+    from{
+        transform:translate(-200px,-100px);
+    }
+
+    to{
+        transform:translate(200px,150px);
+    }
+
+}
+
+
+
+
+/* Application */
+
+.app{
+
+    width:90%;
+    max-width:430px;
+
+    min-height:600px;
+
+    background:
+    rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:35px;
+
+    padding:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+/* Pages */
+
+.page{
+
+    display:none;
+
+    text-align:center;
+
+    animation:show .7s ease;
+
+}
+
+
+
+.page.active{
+
+    display:block;
+
+}
+
+
+
+@keyframes show{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+h1{
+
+    font-size:40px;
+
+    margin-top:40px;
+
+}
+
+
+
+h2{
+
+    font-size:28px;
+
+}
+
+
+
+p{
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+
+
+
+/* Boutons */
+
+button{
+
+    border:none;
+
+    padding:15px 28px;
+
+    margin-top:20px;
+
+    border-radius:50px;
+
+    background:#ff4f91;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 25px #ff4f91;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+/* Inputs */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border-radius:18px;
+
+    border:none;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+
+
+
+textarea{
+
+    height:100px;
+
+}
+
+
+
+
+/* Carte programme */
+
+.card{
+
+    background:
+    rgba(255,255,255,.15);
+
+    padding:20px;
+
+    border-radius:25px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+/* Galerie */
+
+.photos{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+
+
+.photos div{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.25);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    animation:float 3s infinite;
+
+}
+
+
+
+.photos div:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+
+
+.photos div:nth-child(3){
+
+    animation-delay:1s;
+
+}
+
+
+
+@keyframes float{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+
+/* Compteur */
+
+#timer{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    margin:40px 0;
+
+}
+
+
+
+
+/* Lettre */
+
+.letter{
+
+    background:
+
+    rgba(255,255,255,.18);
+
+    padding:25px;
+
+    border-radius:25px;
+
+    min-height:180px;
+
+}
+
+
+
+
+/* Coeur final */
+
+.bigHeart{
+
+    font-size:100px;
+
+    animation:pulse 1s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+
+/* Coeurs qui tombent */
+
+.heart{
+
+    position:fixed;
+
+    top:-30px;
+
+    animation:fall linear forwards;
+
+    pointer-events:none;
+
+}
+
+
+
+@keyframes fall{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
